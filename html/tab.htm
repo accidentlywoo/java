@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      h2{text-align:center;margin:0;}
+      h4{margin:0;}
+      .tab{
+        width:600px;
+        margin:0 auto;
+      }
+      .tab_menu{
+        background-color: bisque;
+      }
+      .tab_menu > div{
+        display:inline-block;
+        width:140px;
+        text-align:center;
+        border:1px solid #fff;
+      }
+      .content{
+        background-color: antiquewhite;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Tab UI Test</h2>
+
+    <div class="tab">
+      <div class="tab_menu">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div>
+
+      <section class="content">
+        <h4>hello jk</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+         </p>
+      </section>
+    </div>
+    <script>
+
+      function sendAjax(url){
+        var oReq = new XMLHttpRequest();
+          oReq.addEventListener("load",function(){
+            console.log(oReq.responseText);
+          });
+          oReq.open("GET", url);
+          oReq.send();
+      }
+
+      var tab_menu = document.querySelector(".tab_menu");
+      tab_menu.addEventListener("click", function(e){
+        //console.log(e.target.innerText);
+        sendAjax("./json.txt");
+      });
+
+    </script>
+  </body>
+</html>
