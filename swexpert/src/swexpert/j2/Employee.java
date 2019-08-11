@@ -20,6 +20,14 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", number=" + number + ", dept=" + dept + "]";
+	}
+
 	public int getNumber() {
 		return number;
 	}
